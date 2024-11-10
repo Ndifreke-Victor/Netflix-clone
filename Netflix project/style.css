@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap");
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* TODO: Header and nav styles */
+
+header {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(./Assets/header-image.png);
+}
+
+nav {
+  width: 90vw;
+  margin: auto;
+  padding: 2rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLogo {
+  width: 10rem;
+}
+
+.headerButton {
+  font-size: 1.2rem;
+  background-color: #db0001;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 2rem;
+}
+
+.headerText {
+  color: white;
+  text-align: center;
+  font-family: inherit;
+  width: 80vw;
+  margin: auto;
+  padding: 1rem;
+}
+
+h1 {
+  max-width: 70rem;
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 3rem;
+  margin-top: 8rem;
+}
+
+.P1 {
+  font-size: 1.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.P2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.headerEmail {
+  width: 100%;
+  max-width: 390px;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  color: #f0f0f4;
+  background-color: #15141a;
+  border: 1px solid #5b5b66;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.textButton {
+  text-wrap: nowrap;
+  width: 50%;
+  height: 90%;
+  max-height: 60%;
+  font-size: 1.8rem;
+  background-color: #db0001;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1.3rem 1rem;
+}
+
+/* TODO: MAIN */
+
+main {
+  position: relative;
+  color: white;
+  background-color: black;
+  padding-bottom: 0.1rem;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
+  background: linear-gradient(to right, pink, red, pink);
+}
+
+.ht2 {
+  margin-top: 3rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  padding-top: 2rem;
+  font-weight: normal;
+  padding-left: 5.2%;
+  padding-right: auto;
+}
+
+.dropdown-container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: #15141a;
+  color: #f0f0f4;
+  border: 1px solid #5b5b66;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.dropdown-button .arrow {
+  margin-left: auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  background-color: #1e1e2a;
+  border: 1px solid #5b5b66;
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: #f0f0f4;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #5b5b66;
+  color: #ffffff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 90vw;
+  margin: 2rem auto;
+}
+
+.imgs {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  scroll-behavior: smooth;
+  padding: 10px;
+  scrollbar-width: none; /* For Firefox */
+}
+.imgs::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.imgs img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.imgs img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+.scroll-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-button.prev {
+  left: 0px;
+}
+
+.scroll-button.next {
+  right: 0px;
+}
+
+.cta {
+  width: 90vw;
+  margin: 1rem auto;
+  padding: 0.7rem;
+  background: linear-gradient(
+    135deg,
+    #02173a 10%,
+    #0a0b34 40%,
+    #150b28 70%,
+    #200b20 100%
+  );
+  border-radius: 1rem;
+}
+
+h3 {
+  font-size: 1.9rem;
+  font-weight: normal;
+  padding: 1.8rem 1rem 0.5rem 1rem;
+}
+
+.ctap {
+  font-size: 1.6rem;
+  padding: 1rem;
+}
+
+.svg {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+h4 {
+  margin-top: 3rem;
+  font-size: 1.9rem;
+  padding: 1rem 0;
+  font-weight: normal;
+  padding-left: 4.7%;
+  padding-right: auto;
+}
+
+.accordion {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.accordionContent {
+  margin-bottom: 1rem;
+}
+
+.aLabel {
+  padding: 1.5rem;
+  background-color: #333;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.aLabel:hover {
+  background-color: #414040;
+}
+
+.icon {
+  font-size: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.aContent {
+  margin-top: 0.1rem;
+  padding-top: 1.7rem;
+  padding-left: 1.7rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  background-color: #333;
+  color: #fff;
+  display: none;
+  font-size: 1.9rem;
+}
+
+.accordionContent.active .aContent {
+  display: block;
+}
+
+.accordionContent.active .icon {
+  transform: rotate(45deg);
+}
+
+.mainText {
+  color: white;
+  text-align: left;
+  font-family: inherit;
+  width: 90vw;
+  margin: auto;
+}
+
+.textButton2 {
+  width: 40%;
+  font-size: 1.8rem;
+  background-color: #db0001;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.headerEmail2 {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: #f0f0f4;
+  background-color: #15141a;
+  border: 1px solid #5b5b66;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.mt4 {
+  font-size: 1.7rem;
+  padding: 0;
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+h5 {
+  font-size: 2rem;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  padding-bottom: 1rem;
+}
+
+.socialmediacta {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.footerLinks {
+  max-width: 3rem;
+  transition: 0.3s ease;
+}
+
+.footerLinks:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.footerLinks:active {
+  transform: translateY(-5px);
+}
+
+.footerp {
+  text-align: center;
+  color: #666;
+  font-size: 1.5rem;
+}
+
+.textButton2:hover,
+.headerButton:hover,
+.textButton:hover {
+  cursor: pointer;
+  background-color: #ac0404;
+}
+
+@media (min-width: 600px) {
+  .headerLogo {
+    width: 10rem;
+  }
+
+  .headerButton {
+    font-size: 1.3rem;
+  }
+
+  h1 {
+    margin: 0 auto;
+    padding-top: 10rem;
+    text-align: center;
+    width: 50rem;
+  }
+
+  .inputhead {
+    display: flex;
+    justify-content: center;
+  }
+
+  .textButton {
+    text-align: center;
+    margin-left: 1rem;
+    width: 25vh;
+    max-width: 40vh;
+  }
+}
+
+@media (min-width: 960px) {
+  nav {
+    padding: 2rem 5rem;
+  }
+  .headerLogo {
+    width: 15rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .dropdown-container {
+    display: inline-flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: auto;
+  }
+
+  .dropdown-button {
+    width: 10vw;
+  }
+}
+
+@media (min-width: 1278px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  .P1 {
+    font-size: 1.9em;
+  }
+  .P2 {
+    font-size: 1.7rem;
+  }
+
+  h2,
+  .dropdown-container,
+  h4 {
+    padding-left: 14.7%;
+  }
+  .imgs img {
+    width: 200px;
+  }
+
+  .sp2 {
+    font-size: 300rem;
+    display: flex;
+    gap: 2rem;
+    padding-top: 1rem;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .accordion {
+    width: 70vw;
+  }
+
+  .mainText {
+    text-align: center;
+  }
+
+  .headerEmail2 {
+    width: 50%;
+  }
+
+  .textButton2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 1rem;
+    padding: 1.5rem;
+    width: 20%;
+  }
+
+  .cta {
+    padding-bottom: 0rem;
+  }
+
+  .carousel-container {
+    padding-top: 2rem;
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
